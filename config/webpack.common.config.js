@@ -19,7 +19,7 @@ module.exports = {
             '@css': path.resolve(__ROOT__, 'src/css'), //update here and ts.config and restart vscode window
             '@js': path.resolve(__ROOT__, 'src/js') 
         },
-        extensions: ['.ts', '.tsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
         enforceExtension: false,
     }
 }

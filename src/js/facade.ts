@@ -1,3 +1,4 @@
+//[[optional]]
 abstract class IBlurayPlayer{ //...or interface for every class
     public abstract on():void
     public abstract off():void
