@@ -1,19 +1,9 @@
 const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 let common = require('./webpack.common.config'); 
 
 const __ROOT__ = process.cwd()
-
-// console.log({
-//     __ROOT__,
-//     __dirname,
-//     subPath: 'src/tpl/index.html',
-//     combinedDirname1: path.resolve(__dirname, '../src/tpl/index.html'),
-//     combinedDirname2: path.resolve(__dirname, './src/tpl/index.html'),
-//     combinedDirname4: path.resolve(__dirname, 'src/tpl/index.html'),
-//     combinedDirname3: path.resolve(__dirname, '/src/tpl/index.html'),
-//     combinedRootttt5: path.resolve(__ROOT__,'src/tpl/index.html')
-// })
 
 module.exports = {
     ...common,
@@ -21,17 +11,29 @@ module.exports = {
     module: { 
     ...common.module,
         rules: [
+            // Use with injection method
+            // {
+            //     test: /\.css$/gi, 
+            //     exclude: /node_modules/gi,
+            //     use: ['style-loader' ,'css-loader']
+            // }, 
             {
                 test: /\.css$/gi, 
                 exclude: /node_modules/gi,
-                use: ['style-loader' ,'css-loader']
-            }, 
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {}
+                    },
+                    'css-loader'
+                ]
+            },
             {
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/gi,
                 use: ['babel-loader']
             }
-            // {
+            // { //??? why not use ts loader | html loader
             //     test: /\.ts$/gi,
             //     exclude: /node_modules/gi,
             //     use: ['ts-loader']
@@ -46,19 +48,26 @@ module.exports = {
     plugins: [
     //...common.plugins,
         new HtmlWebpackPlugin({
-            template: path.resolve(__ROOT__,'src/tpl/index.html'),
+            filename: 'main/index.html',
+            template: path.resolve(__ROOT__,'src/main/tpl/ninja.html'),
+            chunks: ['main'],
+            inject: false,
             showErrors: true
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'flash/index.html',
+            template: path.resolve(__ROOT__,'src/flash/tpl/index.html'),
+            chunks: ['flash'],
+            inject: false,
+            showErrors: true
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name]/css/app.css',
+            chunkFilename: '[name]/css/[id].css'
+        }),
     ],
-    /** 
-     * ??? */
-    devtool: 'inline-sourcemap',
+    devtool: 'inline-sourcemap'
     // devServer: {
-    //     /**
-    //      * c This folder is served from server, aka server root 
-    //      * c Production would use live server or custom prod server
-    //      * p Have to choose a port
-    //      * _ have to download webpack-dev-server*/ 
     //     contentBase: path.join(__ROOT__, 'public'),
     //     compress: true,
     //     port: 9000
@@ -67,8 +76,20 @@ module.exports = {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
-// comments for dev
+// notes
 ////////////////////////////////////////////////////////////////////////////////////
+// console.log({
+//     __ROOT__,
+//     __dirname,
+//     subPath: 'src/tpl/index.html',
+//     combinedDirname1: path.resolve(__dirname, '../src/tpl/index.html'),
+//     combinedDirname2: path.resolve(__dirname, './src/tpl/index.html'),
+//     combinedDirname4: path.resolve(__dirname, 'src/tpl/index.html'),
+//     combinedDirname3: path.resolve(__dirname, '/src/tpl/index.html'),
+//     combinedRootttt5: path.resolve(__ROOT__,'src/tpl/index.html')
+// })
+
+
 //module.exports = {
     // entry: {
     //     main: './src/js/index.js',

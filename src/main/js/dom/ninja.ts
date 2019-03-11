@@ -1,5 +1,8 @@
-import {isEverySet, isSet} from '../../utils/fun'
-import {isArray, isUndefined, isNull, isString, isHTMLUListElement, isHTMLLIElement, isHTMLInputElement, isHTMLFormElement, isHTMLSpanElement} from '../../utils/typeGuards'
+import {isEverySet, isSet} from '@utils/fun'
+import {
+    isArray, isUndefined, isNull, isString, isHTMLUListElement, isHTMLLIElement, 
+    isHTMLInputElement, isHTMLFormElement, isHTMLSpanElement
+} from '@utils/typeGuards'
 
 // delete books
 export function initDelete(){

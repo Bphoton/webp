@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Relative to public output -->
+    <!-- 
+        absolute: /flash/css/app.css
+        relative: ./css/app.css
+    -->
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+    <header id='Header'>
+        <div class="container">
+            <h3 id='header'>Flashcards</h3>
+        </div>
+    </header>
+    <div class='container'>
+        <div class="flashcards">
+            <div class="flashcard">
+                <div class="flashcard__front">Array.prototype.slice()
+                    </div>
+                <div class="flashcard__back">The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included). The original array will not be modified.</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard__front">a</div>
+                <div class="flashcard__back">b</div>
+            </div>
+            <div class="flashcard">
+                <div class="flashcard__front">a</div>
+                <div class="flashcard__back">b</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            Footer
+        </div>
+    </footer>
+
+    <script name='flashcard' type='photon/template'>
+        <div class="flashcard">
+            <div class="flashcard__front">{{flashcard__front}}</div>
+            <div class="flashcard__back">{{flashcard__back}}</div>
+        </div>
+    </script>
+
+    <script name='wrong' type='photon/template'>
+        Your wrong
+    </script>
+
+    <!-- Not in use atm, implement if you want -->
+    <div data-template name='flashcard'>
+        <div class="flashcard">
+            <div class="flashcard__front"></div>
+            <div class="flashcard__back"></div>
+        </div>
+    </script>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
