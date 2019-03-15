@@ -1,4 +1,4 @@
-#new {
+/* #new {
     background: blueviolet;
     width: 100px;
     float: left;
@@ -8,14 +8,10 @@
     background: blueviolet;
     width: 100px;
     float: left;
-}
+} */
 
-#header {
+#Header {
     background: blueviolet;
-}
-
-#flash {
-    background: orange;
 }
 
 .container {
@@ -23,21 +19,26 @@
     max-width: 1000px;
     margin: 0px auto;
 }
+
 .flashcard {
     border: solid 1px black;
     display: flex;
     min-height: 50px;
+    
 }
 
 .flashcard > * {
     width: 50%;
+    word-wrap: normal; /* normal|break-word|initial|inherit */
 }
-.flashcard__front {
-    /* background: blue */
 
+.flashcard__front {
+    text-align: center;
+    /* font-family: 'Srisakdi', cursive; */
 }
 .flashcard__back {
-    /* background: blueviolet */
+    background: blueviolet;
+    text-align: left;
 }
 
 .flashcard__back {
@@ -45,7 +46,7 @@
     transition: all 0.4s ease 0s;
 }
 
-.flashcard:hover .flashcard__back {
+.flashcard__back:hover {
     opacity: 1
 }
 
@@ -58,6 +59,18 @@
     display: none
 }
 
+#AddFlash {
+    display: flex;
+}
+#AddFlash > #AddFront {
+    width: 50%;
+    height: 100px;
+}
+
+#AddFlash > #AddBack {
+    width: 50%;
+    height: 100px;
+}
 /* [type='photon/template'] {
     display: block;
     background: red;

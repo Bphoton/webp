@@ -3,29 +3,29 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export class GetElementBy {
     id(e: string) {
-        console.log('-------------------id---------');
+        console.log('--id--');
         console.log('id', document.getElementById(e));
     }
     tagName(e: string) {
-        console.log('------------tagName-----------');
+        console.log('--tagName--');
         console.log('tag name:', document.getElementsByTagName(e));
     }
     name(e: string) {
-        console.log('---------------Name-----------');
+        console.log('--Name--');
         console.log('name:', document.getElementsByName(e));
     }
     class(e: string) {
-        console.log('---------Class Name-----------');
+        console.log('--Class Name--');
         console.log('Class:', document.getElementsByClassName(e));
     }
 }
 export class QuerySelector {
     qs(e: string) {
-        console.log('-------------------qs---------');
+        console.log('--qs--');
         console.log('qs:', document.querySelector(e))
     }
     qss(e: string) {
-        console.log('------------------qss---------');
+        console.log('--qss--');
         console.log('qss:', Array.from(document.querySelectorAll(e)).forEach((ee) => { console.log(ee) }))
     }
 }

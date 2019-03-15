@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./js/index.js",
+    "startInspect": "node-nightly --inspect-brk ./js/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-async-generator-functions": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/plugin-transform-async-to-generator": "^7.2.0",
+    "@babel/plugin-transform-exponentiation-operator": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.11.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

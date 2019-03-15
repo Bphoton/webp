@@ -1,0 +1,26 @@
+<h1 class="text-center mb-3">{{header}} in body</h1>
+
+<!-- Add Members | post using ../router/api/members -> Add Members -->
+<form action="/api/members" method="POST" class="mb-4">
+    <div class="form-group">
+        <label for="name">name</label> <!--need to include name='name' bc its the members{} key-->
+        <input type="text" name='name' class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="email">email</label> <!--need to include name='email' bc its the members{} key-->
+        <input type="email" name='email' class="form-control">
+    </div>
+    <input type='submit' value='Add Member' class='btn btn-primary btn-block'>
+</form>
+
+<!-- Get Members -->
+<h4>Members</h4>
+<ul class='list-group'>
+    {{#each members}}
+        <li class='list-group-item'>{{this.name}}: {{this.email}} </li>
+    {{/each}}
+</ul>
+
+<!-- Get access to the json object -->
+<!-- un-comment ../router Add Member res.json(members) for button to work -->
+<a href="/api/members" class="btn btn-light mt-4">Visit API</a>

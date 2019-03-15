@@ -11,14 +11,29 @@
         relative: ./css/app.css
     -->
     <link rel="stylesheet" href="./css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato:300i|Srisakdi" rel="stylesheet">
+    <style id='CustomStyle'></style>
 </head>
 <body>
+    <div id='Demo'></div>
     <header id='Header'>
         <div class="container">
             <h3 id='header'>Flashcards</h3>
         </div>
     </header>
+    <div>
+        <select id='SelectFontOptions'>
+            <option class='fontOption' value="Srisakdi" >Srisakdi</option>
+            <option class='fontOption' value="Indie_Flower" >Indie Flower</option>
+            <option class='fontOption' value="Lato" selected>Lato</option>
+        </select>
+    </div>
     <div class='container'>
+        <form id='AddFlash'>
+            <textarea class='inputFlash' id='AddFront' type='text' name='front'></textarea>
+            <textarea class='inputFlash' id='AddBack' name='back'></textarea>
+            <input id='SubmitFlash' type='submit' value='submit'>
+        </form>
         <div class="flashcards">
             <div class="flashcard">
                 <div class="flashcard__front">Array.prototype.slice()
@@ -52,6 +67,11 @@
         Your wrong
     </script>
 
+    <script name='test' type='photon/template'>
+        {{flashcard__front}}
+        {{flashcard__back}}
+    </script>
+
     <!-- Not in use atm, implement if you want -->
     <div data-template name='flashcard'>
         <div class="flashcard">
@@ -61,5 +81,6 @@
     </script>
 
     <script src="./js/app.js"></script>
+
 </body>
 </html>

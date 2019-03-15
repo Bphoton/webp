@@ -11,7 +11,7 @@ module.exports = {
     module: { 
     ...common.module,
         rules: [
-            // Use with injection method
+            // Use with injection method 
             // {
             //     test: /\.css$/gi, 
             //     exclude: /node_modules/gi,
@@ -33,7 +33,7 @@ module.exports = {
                 exclude: /node_modules/gi,
                 use: ['babel-loader']
             }
-            // { //??? why not use ts loader | html loader
+            // { 
             //     test: /\.ts$/gi,
             //     exclude: /node_modules/gi,
             //     use: ['ts-loader']
@@ -62,8 +62,8 @@ module.exports = {
             showErrors: true
         }),
         new MiniCssExtractPlugin({
-            filename: '[name]/css/app.css',
-            chunkFilename: '[name]/css/[id].css'
+            filename: '[name]/css/app.css', //[name] :: [flash | main]
+            chunkFilename: '[name]/css/[id].css' //[id] :: [app | app]
         }),
     ],
     devtool: 'inline-sourcemap'
@@ -86,7 +86,7 @@ module.exports = {
 //     combinedDirname2: path.resolve(__dirname, './src/tpl/index.html'),
 //     combinedDirname4: path.resolve(__dirname, 'src/tpl/index.html'),
 //     combinedDirname3: path.resolve(__dirname, '/src/tpl/index.html'),
-//     combinedRootttt5: path.resolve(__ROOT__,'src/tpl/index.html')
+//     combinedRoot5: path.resolve(__ROOT__,'src/tpl/index.html')
 // })
 
 

@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__ROOT__, 'public'),
-        filename: '[name]/js/app.js', //can name it whatever
+        filename: '[name]/js/app.js', //[flash | main]
         publicPath: ''
     },
     plugins: [],
